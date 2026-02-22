@@ -156,7 +156,7 @@
       font-weight: bold;
       font-size: 0.78rem;
     }
-    .A    { background: #e6f4ea; color: #2e7d32; }
+    .A    { background: #e6f4ea; color: #1c6720; }
     .B    { background: #e8f0fe; color: #1a73e8; }
     .C    { background: #fff8e1; color: #f57f17; }
     .D    { background: #fce8e6; color: #e53935; }
@@ -166,4 +166,4 @@
       text-align: center;
       color: #aaa;
       padding: 2.5rem;
-      font-size: 0.9rem;
+      font-size: 0.9rem;}
