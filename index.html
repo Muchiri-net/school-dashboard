@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Academic Dashboard</title>
+    <link rel="stylesheet" href="style.css"/>
+    </head>
+<body>
+
+<header>
+  <h1>📚 Academic Dashboard</h1>
+  <div id="clock">00:00:00</div>
+</header>
+
+<div class="ticker">
+  <span>📊 Welcome to the Academic Dashboard &nbsp;|&nbsp; Grades: A ≥70 &nbsp;|&nbsp; B: 60–69 &nbsp;|&nbsp; C: 50–59 &nbsp;|&nbsp; D: 40–49 &nbsp;|&nbsp; Below 40 = Fail &nbsp;|&nbsp; ⭐ = Top Student</span>
+</div>
+
+<div class="container">
+                                                                                                                                                                                                               
+  <!-- FORM -->
+  <div class="card">
+    <h2>Add Student</h2>
+    <form id="studentForm" novalidate>
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" id="name" placeholder="e.g. John Mwangi"/>
+        <p class="err-msg" id="nameErr">Full name is required.</p>
+      </div>
+      <div class="form-group">
+        <label>Registration Number</label>
+        <input type="text" id="reg" placeholder="e.g. SCT221-0001/2024"/>
+        <p class="err-msg" id="regErr">Registration number is required.</p>
+      </div>
+      <div class="form-group">
+        <label>CAT Marks (0 – 30)</label>
+        <input type="number" id="cat" placeholder="0 – 30" min="0" max="30"/>
+        <p class="err-msg" id="catErr">Must be between 0 and 30.</p>
+      </div>
+      <div class="form-group">
+        <label>Exam Marks (0 – 70)</label>
+        <input type="number" id="exam" placeholder="0 – 70" min="0" max="70"/>
+        <p class="err-msg" id="examErr">Must be between 0 and 70.</p>
+      </div>
+      <button type="submit" class="btn-blue">+ Add Student</button>
+      <div class="success-msg" id="successMsg">✓ Student added successfully!</div>
+    </form>
+  </div>
+
+  <!-- RIGHT SIDE -->
+  <div>
+
+    <!-- STATS -->
+    <div class="stats">
+      <div class="stat"><div class="num" id="sTotal">0</div><div class="lbl">Students</div></div>
+      <div class="stat"><div class="num" id="sAvg">—</div><div class="lbl">Avg Score</div></div>
+      <div class="stat green"><div class="num" id="sPasses">0</div><div class="lbl">Passes</div></div>
+      <div class="stat red"><div class="num" id="sFails">0</div><div class="lbl">Fails</div></div>
+    </div>
+
+    <!-- TABLE -->
+    <div class="card">
+      <h2>Results Table</h2>
+      <div class="table-controls">
+        <button class="btn-gray" id="sortBtn">↕ Sort by Total</button>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Full Name</th>
+            <th>Reg No</th>
+            <th>CAT</th>
+            <th>Exam</th>
+            <th>Total</th>
+            <th>Grade</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
