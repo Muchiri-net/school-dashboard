@@ -1,20 +1,20 @@
-"use strict"; // Enforces better coding practices
+"use strict"; 
 
-// 1.0 Data Storage (Part A)
+
 const students = [];
 
-// 2.0 Timer Feature (Part E: Live Clock)
+//  Timer Feature 
 setInterval(() => {
     const now = new Date();
     document.getElementById('live-clock').innerText = now.toLocaleTimeString();
 }, 1000);
 
-// 3.0 Form Selection
+// Form Selection
 const studentForm = document.getElementById('studentForm');
 
-// 4.0 Event Listener for Form Submission
+// Form Submission
 studentForm.addEventListener('submit', function(event) {
-    event.preventDefault(); // Requirement A.4: Prevent page reload
+    event.preventDefault(); 
 
     // Capture Values
     const name = document.getElementById('fullName').value;
@@ -22,13 +22,13 @@ studentForm.addEventListener('submit', function(event) {
     const cat = parseFloat(document.getElementById('catMarks').value);
     const exam = parseFloat(document.getElementById('examMarks').value);
 
-    // Part A: Validation logic (redundancy for HTML5 validation)
+    //  Validation logic 
     if (cat < 0 || cat > 30 || exam < 0 || exam > 70) {
         alert("Invalid marks range!");
         return;
     }
 
-    // Part B: Grade Calculation
+    //  Grade Calculation
     const total = cat + exam;
     let grade = "";
 
@@ -38,19 +38,19 @@ studentForm.addEventListener('submit', function(event) {
     else if (total >= 40) grade = "D";
     else grade = "Fail";
 
-    // Store in Array as Object
+    
     const studentObj = { name, regNo, cat, exam, total, grade };
     students.push(studentObj);
 
-    // Update UI
+    
     updateUI();
     studentForm.reset();
 });
 
-// 5.0 DOM Manipulation (Part C)
+//  DOM Manipulation 
 function updateUI() {
     const tableBody = document.getElementById('tableBody');
-    tableBody.innerHTML = ""; // Clear existing rows
+    tableBody.innerHTML = ""; 
 
     students.forEach((student, index) => {
         const row = document.createElement('tr');
@@ -68,7 +68,7 @@ function updateUI() {
     calculateStats();
 }
 
-// 6.0 Dashboard Features (Part D: Stats & Delete)
+//  Dashboard Features 
 function calculateStats() {
     if (students.length === 0) return;
 
@@ -80,7 +80,6 @@ function calculateStats() {
     document.getElementById('passCount').innerText = passes;
 }
 
-// Global function for the delete button
 window.deleteStudent = function(index) {
     students.splice(index, 1);
     updateUI();
