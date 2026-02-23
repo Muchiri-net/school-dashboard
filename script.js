@@ -1,4 +1,4 @@
-// ================= CLOCK =================
+//  CLOCK 
 function updateClock() {
   const now = new Date();
   document.getElementById("clock").textContent =
@@ -8,7 +8,7 @@ setInterval(updateClock, 1000);
 updateClock();
 
 
-// ================= VARIABLES =================
+//  VARIABLES 
 const form = document.getElementById("studentForm");
 const tableBody = document.getElementById("tableBody");
 
@@ -23,7 +23,7 @@ let students = [];
 let sortAsc = true;
 
 
-// ================= GRADE FUNCTION =================
+//  GRADE FUNCTION 
 function getGrade(total) {
   if (total >= 70) return "A";
   if (total >= 60) return "B";
@@ -33,7 +33,7 @@ function getGrade(total) {
 }
 
 
-// ================= VALIDATION =================
+//  VALIDATION 
 function showError(input, msgId) {
   input.classList.add("error");
   document.getElementById(msgId).classList.add("show");
@@ -45,7 +45,7 @@ function clearError(input, msgId) {
 }
 
 
-// ================= ADD STUDENT =================
+//  ADD STUDENT 
 form.addEventListener("submit", function(e) {
   e.preventDefault();
 
@@ -108,7 +108,7 @@ form.addEventListener("submit", function(e) {
 });
 
 
-// ================= RENDER TABLE =================
+//  RENDER TABLE 
 function renderTable() {
   tableBody.innerHTML = "";
 
@@ -142,7 +142,7 @@ function renderTable() {
 }
 
 
-// ================= UPDATE STATS =================
+//  UPDATE STATS 
 function updateStats() {
   sTotal.textContent = students.length;
 
@@ -159,7 +159,7 @@ function updateStats() {
 }
 
 
-// ================= SORT BUTTON =================
+//  SORT BUTTON 
 document.getElementById("sortBtn").addEventListener("click", () => {
   students.sort((a,b) => sortAsc ? a.total - b.total : b.total - a.total);
   sortAsc = !sortAsc;
