@@ -140,19 +140,21 @@
     .table-controls { display: flex; gap: 0.75rem; margin-bottom: 1rem; }
     table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
     th {
-      background: #f8f9fa;
+      background: lavender;
       padding: 0.65rem 0.9rem;
       text-align: left;
       font-size: 0.75rem;
       text-transform: uppercase;
       color: #888;
-      border-bottom: 2px solid #eee;
+      border-bottom: 2px solid brown;
     }
-    td { padding: 0.7rem 0.9rem; border-bottom: 1px solid #f0f0f0; }
-    tr:hover td { background: #fafbff; }
-    tr.top-student td { background: #fffde7; }
+    td { padding: 0.7rem 0.9rem; border-bottom: 1px solid black; }
+    tr:hover td { background: greenyellow; }
+    tr.top-student td { background: lightblue; }
     tr.top-student td:first-child::before { content: "⭐ "; }
-
+table {
+  color: black;
+}
     .badge {
       display: inline-block;
       padding: 0.2rem 0.55rem;
@@ -168,6 +170,6 @@
 
     .empty {
       text-align: center;
-      color: #aaa;
+      color:;
       padding: 2.5rem;
       font-size: 0.9rem;}
